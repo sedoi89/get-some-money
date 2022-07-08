@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './components/App/App';
+import App from './components/app/App';
 import {ToastContainer} from 'react-toastify';
 import {store} from '../src/components/store/index';
 import {Provider} from 'react-redux';
