@@ -2,7 +2,7 @@ import '../../assets/css/App.css';
 import Header from '../header/header.jsx';
 import Currency from "../currency/currency";
 import {axiosValutes} from "../store/api-actions";
-import {BrowserRouter, Routes, Route, Navigate, HashRouter} from "react-router-dom";
+import { Routes, Route, Navigate, HashRouter} from "react-router-dom";
 import About from "../About/about";
 import PrivateRoute from "../privat-route/private-route";
 import Login from "../login/login";
