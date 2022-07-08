@@ -74,7 +74,7 @@ export const StyledHeaderDivClock = styled.div`
   text-align: center;
 
   & button {
-    width: 100%;
+    width: 50%;
     height: 60px;
     align-self: center;
     background-color: #F5F5F5;
@@ -88,13 +88,16 @@ export const StyledHeaderDivClock = styled.div`
     outline: #4db0c4 1px solid;
   }
 
-  @media (max-width: 530px) {
+  @media (max-width: 616px) {
     top: 181px;
   }
 
   @media (max-width: 437px) {
     top: 214px;
     width: 20%;
+    & button {
+      width: 100%;
+    }
     & span {
       display: none
     }
