@@ -2,7 +2,7 @@ import '../../assets/css/App.css';
 import Header from '../header/header.jsx';
 import Currency from "../currency/currency";
 import {axiosValutes} from "../store/api-actions";
-import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
+import {BrowserRouter, Routes, Route, Navigate, HashRouter} from "react-router-dom";
 import About from "../About/about";
 import PrivateRoute from "../privat-route/private-route";
 import Login from "../login/login";
@@ -15,22 +15,22 @@ function App() {
 
     return (
 
-        <BrowserRouter>
+        <HashRouter>
             <Header/>
             <Routes>
                 <Route exact path={'/'} element={<Main/>}/>
-                <Route path={'/about'} element={<About/>}/>
-                <Route path={'/login'} element={<Login/>}/>
-                <Route path={'/currencies'} element={
+                <Route exact path={'/about'} element={<About/>}/>
+                <Route exact path={'/login'} element={<Login/>}/>
+                <Route exact path={'/currencies'} element={
                     <PrivateRoute
                         authorizationStatus={'auth'}
                     >
                         <Currency/>
                     </PrivateRoute>}/>
-                <Route path={'*'} element={<Navigate replace to='/'/>} />
+                <Route exact path={'*'} element={<Navigate replace to='/'/>} />
 
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
 
     );
 }
