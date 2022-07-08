@@ -74,7 +74,7 @@ export const StyledHeaderDivClock = styled.div`
   text-align: center;
 
   & button {
-    width: 50%;
+    min-width: 50%;
     height: 60px;
     align-self: center;
     background-color: #F5F5F5;
