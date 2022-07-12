@@ -15,7 +15,8 @@ export const axiosValutes = createAsyncThunk('axios/getValutes',
                 name: data.Valute.USD.Name,
                 value: data.Valute.USD.Value.toFixed(2),
                 nominal: data.Valute.USD.Nominal,
-                charCode: data.Valute.USD.CharCode
+                charCode: data.Valute.USD.CharCode,
+                previous: data.Valute.USD.Previous
             }))
 
             store.dispatch(setArray(currenciesArray))

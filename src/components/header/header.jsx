@@ -67,7 +67,10 @@ const Header = () => {
                 Moscow
                 </span>
             {checkLogin() && <StyledHeaderSpan> Greetings {checkName()} </StyledHeaderSpan>}
-            <button onClick={loginClick}>
+            <button
+                onClick={loginClick}
+                login={checkLogin()}
+            >
                 {loginName()}
             </button>
         </StyledHeaderDivClock>

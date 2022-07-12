@@ -17,7 +17,8 @@ export const initialState = {
         name: 'Российские рубли',
         nominal: 1,
         value: 1,
-        charCode: 'RUB'
+        charCode: 'RUB',
+        previous: 1,
     },
 
 

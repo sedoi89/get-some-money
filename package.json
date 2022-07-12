@@ -10,6 +10,7 @@
     "@types/react-redux": "^7.1.23",
     "axios": "^0.27.2",
     "react": "^18.2.0",
+    "react-device-detect": "^2.2.2",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.31.3",
     "react-redux": "^7.2.2",

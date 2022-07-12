@@ -5,10 +5,11 @@ import Xchange from '../xchange/xchnge'
 import {store} from "../store";
 import {setValute} from "../store/actions";
 import '../../assets/css/App.css'
-import {StyledCurrencySelect, StyledCurrencyTableContainer, StyledCurrencyTable} from '../../assets/styled-components/currency';
-
-
-
+import {
+    StyledCurrencySelect,
+    StyledCurrencyTableContainer,
+    StyledCurrencyTable
+} from '../../assets/styled-components/currency';
 
 
 const Currency = () => {
@@ -21,10 +22,10 @@ const Currency = () => {
 
     function sort() {
         if (select === 'High to Low') {
-            currenciesArray.sort((a, b) => b[1].Value/b[1].Nominal - a[1].Value/a[1].Nominal)
+            currenciesArray.sort((a, b) => b[1].Value / b[1].Nominal - a[1].Value / a[1].Nominal)
         }
         if (select === 'Low to High') {
-            currenciesArray.sort((a, b) => a[1].Value/a[1].Nominal - b[1].Value/b[1].Nominal)
+            currenciesArray.sort((a, b) => a[1].Value / a[1].Nominal - b[1].Value / b[1].Nominal)
 
         }
         return currenciesArray
@@ -44,7 +45,8 @@ const Currency = () => {
                     nominal: item[1].Nominal,
                     value: item[1].Value.toFixed(2),
                     name: item[1].Name,
-                    charCode: item[1].CharCode
+                    charCode: item[1].CharCode,
+                    previous: item[1].Previous.toFixed(2)
                 }))
                 setProp(!prop);
 
@@ -72,7 +74,6 @@ const Currency = () => {
                         <td>Единиц</td>
                         <td>Валюта</td>
                         <td>Курс</td>
-                        <td></td>
                         <td>Изменение за 24 часа</td>
                     </tr>
                     {currenciesArray.map(i =>

@@ -16,6 +16,7 @@ export const StyledCurrencySelect = styled.select`
   color: rgb(84, 84, 84);
   font-weight: bold;
   border: none;
+  border-radius: 20px;
   text-align: center;
   padding-right: 10px;
   font-size: 15px;
@@ -42,7 +43,7 @@ export const StyledCurrencyTable = styled.table`
   }
   
   & td:nth-child(3):hover:not(& tr:nth-child(1) td:nth-child(3)) {
-    box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 0px 33px -1px rgba(34, 60, 80, 0.07) inset;
     cursor: pointer;
   }
   & tr:nth-child(1) td:nth-child(3) {

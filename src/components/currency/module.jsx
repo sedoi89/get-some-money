@@ -1,28 +1,32 @@
 import React from 'react';
-
+import {useSelector} from 'react-redux';
 
 
 const Module = (props) => {
 
-        const check = function (previous, value) {
+    const initialCurrency = useSelector(state => state.reducer.initialValute)
 
-        if (value > previous) return  <td style={{color: "green"}}>▲</td>
-        if (value < previous) return   <td style={{color: "red"}}>▼</td>
-    }
-    const checkPercents = function (previous, value) {
-        const percents = previous / value
-        if (percents > 1) return <td style={{color: "green"}}>{percents.toFixed(4)}%</td>
-        if (percents < 1) return <td style={{color: "red"}}>{percents.toFixed(4)}%</td>
+    const checkPercents = function () {
+        const today = props.props.Value;
+        const yesterday = props.props.Previous;
+        let ratioA = (yesterday/initialCurrency.previous - today/initialCurrency.value)*100;
+
+        if (initialCurrency.charCode === 'RUB') {
+            ratioA = today - yesterday
+        }
+        if (ratioA > 0) return <td style={{color: "green"}}> ▲ +{ratioA.toFixed(2)}</td>
+        if (ratioA < 0) return <td style={{color: "red"}}> ▼ {ratioA.toFixed(2)}</td>
     }
     return (
-        <tr>
-            <td >{props.props.CharCode}</td>
-            <td aria-disabled={"true"}>{props.props.Nominal }</td>
-            <td>{props.props.Name}</td>
-            <td aria-disabled={"true"}>{props.props.Value.toFixed(2) }</td>
-            {check(props.props.Previous, props.props.Value)}
-            {checkPercents(props.props.Value, props.props.Previous)}
-        </tr>
+        <>
+            <tr>
+                <td>{props.props.CharCode}</td>
+                <td aria-disabled={"true"}>{props.props.Nominal}</td>
+                <td>{props.props.Name}</td>
+                <td aria-disabled={"true"}>{(props.props.Value / initialCurrency.value).toFixed(2)}</td>
+                {checkPercents()}
+            </tr>
+        </>
     );
 };
 

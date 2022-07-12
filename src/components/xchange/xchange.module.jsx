@@ -19,7 +19,8 @@ const XchangeModule = (props) => {
                     name: item[1].Name,
                     value: item[1].Value.toFixed(2),
                     nominal: item[1].Nominal,
-                    charCode: item[1].CharCode
+                    charCode: item[1].CharCode,
+                    previous: item[1].Previous
 
                 }))
             }
@@ -29,6 +30,7 @@ const XchangeModule = (props) => {
                     value: 1,
                     nominal: 1,
                     charCode: 'RUB',
+                    previous: 1,
                 }))
             }
             return item;

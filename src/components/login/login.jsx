@@ -24,7 +24,7 @@ function Form() {
             setTimeout(() => {
                 setIsDisabled(false);
                 setPassError(false);
-            }, 2000)
+            }, 3000)
         }
         if (getValues('login') === LOGIN && getValues('password') === PASSWORD) {
 
@@ -39,7 +39,7 @@ function Form() {
                 }, 1000);
             setTimeout(() => {
                 setLoginError(false);
-            }, 2000);
+            }, 3000);
         }
     };
 

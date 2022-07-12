@@ -4,7 +4,13 @@ import {store} from "../store";
 import {setChangedValute, setValute} from "../store/actions";
 import arrows from '../../assets/icons/arrows.png'
 import XchangeModule from "./xchange.module";
-import {StyledXchangeArrowsContainer, StyledXchangeContainerDiv, StyledXchangeLabel, StyledXchangeDiv} from '../../assets/styled-components/xchange';
+import {isSafari} from 'react-device-detect';
+import {
+    StyledXchangeArrowsContainer,
+    StyledXchangeContainerDiv,
+    StyledXchangeLabel,
+    StyledXchangeDiv
+} from '../../assets/styled-components/xchange';
 
 
 const Xchnge = (props) => {
@@ -40,7 +46,6 @@ const Xchnge = (props) => {
 
     function changeHandle(evt) {
         setDefaultState(evt.target.value)
-
     }
 
 
@@ -66,12 +71,23 @@ const Xchnge = (props) => {
         setGetValuteSum({value: sum})
     }
 
+    function safaryTipe () {
+        if(isSafari) { return 'tel'}
+        else {return 'number'}
+    }
+
+
     return (
         <StyledXchangeContainerDiv>
             <StyledXchangeDiv>
                 <StyledXchangeLabel htmlFor={'change'}>
                     Меняю
-                    <input type={"text"} id={'change'} onChange={changeHandle} value={defaultState.value}/>
+                    <input type={safaryTipe()}
+                           id={'change'}
+                           onChange={changeHandle}
+                           value={defaultState}
+
+                    />
                 </StyledXchangeLabel>
 
                 <XchangeModule props={takeStoreInitialValute.charCode}/>

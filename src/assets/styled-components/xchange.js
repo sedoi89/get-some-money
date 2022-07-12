@@ -18,7 +18,8 @@ export const StyledXchangeArrowsContainer = styled.div`
   top: 415px;
   z-index: 1;
   @media (max-width: 793px) {
-    top: 480px;
+    top: 641px;
+    left: 30px;
   }
 `
 export const StyledXchangeDiv = styled.div`
@@ -32,6 +33,9 @@ export const StyledXchangeDiv = styled.div`
   & span {
     font-weight: normal;
     font-size: 15px;
+  }
+  @media (max-width: 793px) {
+    width: 100%;
   }
 `
 export const StyledXchangeLabel = styled.label`
@@ -52,6 +56,14 @@ export const StyledXchangeLabel = styled.label`
     margin-top: 10px;
     border-radius: 10px;
     color: rgb(84, 84, 84);
+    overflow: scroll;
+  }
+  
+  & input:disabled {
+    color: rgb(84, 84, 84);
+    -webkit-text-fill-color: rgb(84, 84, 84);
+    opacity: 1;
+
   }
 `
 export const StyledXchangeContainerDiv = styled.div`
@@ -59,4 +71,8 @@ export const StyledXchangeContainerDiv = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   width: 100%;
+  
+  @media (max-width: 793px) {
+    flex-direction: column;
+  }
 `

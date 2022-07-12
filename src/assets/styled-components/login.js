@@ -64,7 +64,7 @@ export const StyledLoginDivError = styled.div`
   color: #E26F6F;
   
   @media (max-width: 793px) {
-    top: 445px
+    top: 425px
   }
 `
 export const StyledLoginLabel = styled.label`
